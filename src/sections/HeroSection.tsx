@@ -89,7 +89,7 @@ export default function HeroSection() {
       >
         <div className="h-full flex items-center justify-center">
           <img
-            src="/avatar.png"
+            src="/avatar.webp"
             alt="Evan Portrait"
             className="h-[80.5vh] sm:h-[86.25vh] md:h-[92vh] w-auto object-contain pointer-events-none select-none translate-y-[6vh] md:translate-y-[4vh]"
             draggable={false}

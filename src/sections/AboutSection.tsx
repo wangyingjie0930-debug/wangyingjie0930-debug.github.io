@@ -39,7 +39,7 @@ export default function AboutSection() {
         className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] pointer-events-none select-none"
       >
         <img
-          src="/sneaker.jpg"
+          src="/sneaker.webp"
           alt="Sneaker"
           className="w-[120px] sm:w-[160px] md:w-[210px]"
           draggable={false}
@@ -55,7 +55,7 @@ export default function AboutSection() {
         className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] pointer-events-none select-none"
       >
         <img
-          src="/group134.png"
+          src="/group134.webp"
           alt="3D Group"
           className="w-[130px] sm:w-[170px] md:w-[220px]"
           draggable={false}
@@ -184,7 +184,7 @@ export default function AboutSection() {
         className="absolute bottom-[4%] left-[1%] sm:left-[2%] md:left-[4%] pointer-events-none select-none opacity-60"
       >
         <img
-          src="/moon.png"
+          src="/moon.webp"
           alt="Moon"
           className="w-[100px] sm:w-[130px] md:w-[160px]"
           draggable={false}

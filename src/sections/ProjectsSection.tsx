@@ -62,7 +62,7 @@ function videoItem(src: string, poster: string, title: string, link: string): Ga
 
 const projects: Project[] = [
   {
-    image: '/project-01.jpg',
+    image: '/project-01.webp',
     title: '聚风系列跑鞋设计',
     subtitle: '核心IP',
     handle: '#01',
@@ -79,28 +79,28 @@ const projects: Project[] = [
     ],
     gallery: [
       ...imageGallery([
-        '/projects/jufeng/01.png',
-        '/projects/jufeng/02.png',
-        '/projects/jufeng/03.png',
-        '/projects/jufeng/04.png',
-        '/projects/jufeng/05.png',
-        '/projects/jufeng/06.png',
-        '/projects/jufeng/07.png'
+        '/projects/jufeng/01.webp',
+        '/projects/jufeng/02.webp',
+        '/projects/jufeng/03.webp',
+        '/projects/jufeng/04.webp',
+        '/projects/jufeng/05.webp',
+        '/projects/jufeng/06.webp',
+        '/projects/jufeng/07.webp'
       ]),
       videoItem(
         '/projects/jufeng/video.mp4',
-        '/projects/jufeng/video-poster.jpg',
+        '/projects/jufeng/video-poster.webp',
         '聚风系列宣传视频',
         ''
       ),
       ...imageGallery([
-        '/projects/jufeng/08.png',
-        '/projects/jufeng/09.png'
+        '/projects/jufeng/08.webp',
+        '/projects/jufeng/09.webp'
       ])
     ]
   },
   {
-    image: '/project-02.jpg',
+    image: '/project-02.webp',
     title: '旋风超跑概念跑鞋',
     subtitle: '跨界设计',
     handle: '#02',
@@ -117,24 +117,24 @@ const projects: Project[] = [
     ],
     gallery: [
       ...imageGallery([
-        '/projects/supercar/01.png',
-        '/projects/supercar/02.png',
-        '/projects/supercar/03.png',
-        '/projects/supercar/04.png',
-        '/projects/supercar/05.png',
-        '/projects/supercar/06.png',
-        '/projects/supercar/07.png'
+        '/projects/supercar/01.webp',
+        '/projects/supercar/02.webp',
+        '/projects/supercar/03.webp',
+        '/projects/supercar/04.webp',
+        '/projects/supercar/05.webp',
+        '/projects/supercar/06.webp',
+        '/projects/supercar/07.webp'
       ]),
       videoItem(
         '/projects/supercar/video.mp4',
-        '/projects/supercar/video-poster.jpg',
+        '/projects/supercar/video-poster.webp',
         '旋风超跑概念视频',
         ''
       )
     ]
   },
   {
-    image: '/project-03.jpg',
+    image: '/project-03.webp',
     title: '沧龙 · 深海仿生概念',
     subtitle: '跨界灵感',
     handle: '#03',
@@ -150,13 +150,13 @@ const projects: Project[] = [
       { label: '风格', value: 'Y2K / 生物朋克' }
     ],
     gallery: imageGallery([
-      '/projects/canglong/01.png',
-      '/projects/canglong/02.png',
-      '/projects/canglong/03.png',
-      '/projects/canglong/04.png',
-      '/projects/canglong/05.png',
-      '/projects/canglong/06.png',
-      '/projects/canglong/07.png'
+      '/projects/canglong/01.webp',
+      '/projects/canglong/02.webp',
+      '/projects/canglong/03.webp',
+      '/projects/canglong/04.webp',
+      '/projects/canglong/05.webp',
+      '/projects/canglong/06.webp',
+      '/projects/canglong/07.webp'
     ])
   }
 ];

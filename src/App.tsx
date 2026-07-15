@@ -1,21 +1,25 @@
-import HeroSection from './sections/HeroSection';
-import MarqueeSection from './sections/MarqueeSection';
-import AboutSection from './sections/AboutSection';
-import ServicesSection from './sections/ServicesSection';
-import ProjectsSection from './sections/ProjectsSection';
-import DomeGallerySection from './sections/DomeGallerySection';
-import StrengthsSection from './sections/StrengthsSection';
+import { lazy, Suspense } from 'react';
+
+const HeroSection = lazy(() => import('./sections/HeroSection'));
+const MarqueeSection = lazy(() => import('./sections/MarqueeSection'));
+const AboutSection = lazy(() => import('./sections/AboutSection'));
+const ServicesSection = lazy(() => import('./sections/ServicesSection'));
+const ProjectsSection = lazy(() => import('./sections/ProjectsSection'));
+const DomeGallerySection = lazy(() => import('./sections/DomeGallerySection'));
+const StrengthsSection = lazy(() => import('./sections/StrengthsSection'));
 
 function App() {
   return (
     <main style={{ overflowX: 'clip' }}>
-      <HeroSection />
-      <MarqueeSection />
-      <ProjectsSection />
-      <AboutSection />
-      <ServicesSection />
-      <StrengthsSection />
-      <DomeGallerySection />
+      <Suspense fallback={<div style={{ height: '100vh', background: '#0e0f11' }} />}>
+        <HeroSection />
+        <MarqueeSection />
+        <ProjectsSection />
+        <AboutSection />
+        <ServicesSection />
+        <StrengthsSection />
+        <DomeGallerySection />
+      </Suspense>
     </main>
   );
 }

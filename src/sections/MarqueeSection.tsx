@@ -1,23 +1,23 @@
 import { useRef, useEffect, useState } from 'react';
 
-// 用户作品图 — 从 public/gallery/ 和 public/project-*.jpg 取图
+// 用户作品图 — 从 public/gallery/ 和 public/project-*.webp 取图
 const portfolioImages = [
-  '/gallery/work-01.png',
-  '/gallery/work-03.png',
-  '/gallery/work-05.png',
-  '/gallery/work-07.png',
-  '/gallery/work-09.png',
-  '/gallery/work-11.png',
-  '/gallery/work-13.png',
-  '/gallery/work-15.png',
-  '/gallery/work-02.png',
-  '/gallery/work-04.png',
-  '/gallery/work-06.png',
-  '/gallery/work-08.png',
-  '/gallery/work-10.png',
-  '/gallery/work-12.png',
-  '/gallery/work-14.png',
-  '/gallery/work-16.png',
+  '/gallery/work-01.webp',
+  '/gallery/work-03.webp',
+  '/gallery/work-05.webp',
+  '/gallery/work-07.webp',
+  '/gallery/work-09.webp',
+  '/gallery/work-11.webp',
+  '/gallery/work-13.webp',
+  '/gallery/work-15.webp',
+  '/gallery/work-02.webp',
+  '/gallery/work-04.webp',
+  '/gallery/work-06.webp',
+  '/gallery/work-08.webp',
+  '/gallery/work-10.webp',
+  '/gallery/work-12.webp',
+  '/gallery/work-14.webp',
+  '/gallery/work-16.webp',
 ];
 
 // Video markers — rendered as <video> inside MarqueeRow
@@ -28,18 +28,18 @@ const ZOOM_ANIMATED = '__ZOOM_ANIMATED__';
 
 const row1Images = [
   VIDEO_MARKER,                       // 1st — 10秒产品视频
-  '/gallery/marquee-shoe-1.png',      // 2nd — 包装袋橙白篮球鞋
+  '/gallery/marquee-shoe-1.webp',      // 2nd — 包装袋橙白篮球鞋
   SPEED_VIDEO_MARKER,                 // 3rd — 3秒速度感动效视频
-  '/gallery/marquee-shoe-3.png',      // 4th — 粉紫丝绸 + 黑白橙跑鞋
-  '/gallery/marquee-shoe-4.png',      // 5th — 白色包装袋 + FEIYING 跑鞋
+  '/gallery/marquee-shoe-3.webp',      // 4th — 粉紫丝绸 + 黑白橙跑鞋
+  '/gallery/marquee-shoe-4.webp',      // 5th — 白色包装袋 + FEIYING 跑鞋
   ...portfolioImages.slice(5, 8),     // 6-8: work-11, 13, 15
 ];
 const row2Images = [
-  '/gallery/marquee-shoe-5.png',      // 1st — 透明包装袋 + 橙黑 FEIYING 跑鞋
+  '/gallery/marquee-shoe-5.webp',      // 1st — 透明包装袋 + 橙黑 FEIYING 跑鞋
   ZOOM_ANIMATED,                      // 2nd — S/LAB PHANTASM 3 白底白鞋（2秒由大到小收缩）
-  '/gallery/marquee-shoe-7.png',      // 3rd — Leave Yourself in the Dust
-  '/gallery/marquee-shoe-9.png',      // 4th — 粉底 S/LAB PHANTASM 3
-  '/gallery/marquee-shoe-8.png',      // 5th — 青色光效白跑鞋
+  '/gallery/marquee-shoe-7.webp',      // 3rd — Leave Yourself in the Dust
+  '/gallery/marquee-shoe-9.webp',      // 4th — 粉底 S/LAB PHANTASM 3
+  '/gallery/marquee-shoe-8.webp',      // 5th — 青色光效白跑鞋
   ...portfolioImages.slice(13, 16),   // 6-8: work-10, 12, 14
 ];
 
@@ -110,7 +110,7 @@ function MarqueeRow({
               style={{ width: 420, height: 270 }}
             >
               <img
-                src="/gallery/marquee-shoe-6.png"
+                src="/gallery/marquee-shoe-6.webp"
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover zoom-pulse"

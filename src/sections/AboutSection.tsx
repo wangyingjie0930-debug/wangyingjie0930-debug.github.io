@@ -1,6 +1,7 @@
+import { lazy, Suspense } from 'react';
 import FadeIn from '../components/FadeIn';
 import ContactButton from '../components/ContactButton';
-import Lanyard from '../components/Lanyard/Lanyard';
+const Lanyard = lazy(() => import('../components/Lanyard/Lanyard'));
 
 const bio =
   '10 年深耕儿童运动鞋行业，历经安踏儿童、中乔体育两大头部品牌。擅长打造长线 IP 爆款、搭建分层产品矩阵，以设计迭代盘活存量；精准布局户外、女子等增量赛道，打造第二增长曲线。具备用户洞察、品类战略、产品结构升级、团队梯度搭建及数字化落地等综合能力，实现设计创意与业绩双向赋能。';
@@ -100,13 +101,15 @@ export default function AboutSection() {
                 'radial-gradient(ellipse at center, rgba(68,110,255,0.18) 0%, rgba(12,12,12,0) 65%)',
             }}
           />
-          <Lanyard
-            position={[0, 0, 18]}
-            gravity={[0, -40, 0]}
-            fov={24}
-            transparent
-            lanyardWidth={1.2}
-          />
+          <Suspense fallback={<div style={{ width: '100%', height: '100%', background: 'transparent' }} />}>
+            <Lanyard
+              position={[0, 0, 18]}
+              gravity={[0, -40, 0]}
+              fov={24}
+              transparent
+              lanyardWidth={1.2}
+            />
+          </Suspense>
         </div>
         <p className="mt-3 text-center text-[11px] tracking-[0.3em] uppercase text-white/40">
           Drag the card

@@ -58,6 +58,27 @@ function MarqueeRow({
 }) {
   const translateX = direction === 'right' ? offset - 200 : -(offset - 200);
 
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    videoRefs.current.forEach((v) => {
+      if (v) observer.observe(v);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       className="flex justify-start will-change-transform"
@@ -76,7 +97,8 @@ function MarqueeRow({
                 muted
                 loop
                 playsInline
-                autoPlay
+                preload="none"
+                ref={(el) => { videoRefs.current[0] = el; }}
                 className="w-full h-full object-cover"
                 style={{ display: 'block' }}
               />
@@ -95,7 +117,8 @@ function MarqueeRow({
                 muted
                 loop
                 playsInline
-                autoPlay
+                preload="none"
+                ref={(el) => { videoRefs.current[1] = el; }}
                 className="w-full h-full object-cover"
                 style={{ display: 'block' }}
               />

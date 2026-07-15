@@ -1,0 +1,22 @@
+/* 使用整站统一 Oswald 字体,与 hero-heading 同款 */
+
+.variable-proximity {
+  font-family: 'Oswald', 'Kanit', sans-serif;
+  font-weight: 700;
+}
+
+.variable-proximity span {
+  font-weight: 700 !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

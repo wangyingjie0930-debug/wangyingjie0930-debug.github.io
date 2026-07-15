@@ -4,6 +4,42 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    modulePreload: false,
+    chunkSizeWarningLimit: 500,
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          // rapier 物理引擎（含 WASM，体积大，单独拆分以便延迟加载）
+          if (id.includes('node_modules/@react-three/rapier') || id.includes('node_modules/@dimforge')) {
+            return 'rapier';
+          }
+          // three.js 全家桶（核心 + fiber + drei + meshline + postprocessing）
+          if (id.includes('node_modules/three') || id.includes('node_modules/@react-three') || id.includes('node_modules/meshline') || id.includes('node_modules/postprocessing')) {
+            return 'three';
+          }
+          // framer-motion + gsap
+          if (id.includes('node_modules/framer-motion') || id.includes('node_modules/gsap')) {
+            return 'motion';
+          }
+          // react 核心
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'vendor';
+          }
+          // lucide-react 图标库
+          if (id.includes('node_modules/lucide-react')) {
+            return 'icons';
+          }
+        },
+      },
+    },
+  },
+})
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  build: {
     chunkSizeWarningLimit: 500,
     rollupOptions: {
       output: {

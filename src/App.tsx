@@ -6,17 +6,28 @@ const HeroSection = lazy(() => import('./sections/HeroSection'));
 function LazySection({ children, threshold = 0.05 }: { children: ReactNode; threshold?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
       { rootMargin: '200px', threshold }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, [threshold]);
-  return <div ref={ref} style={{ minHeight: '1px' }}>{inView ? children : null}</div>;
+
+  return (
+    <div ref={ref} style={{ minHeight: '1px' }}>
+      {inView ? children : null}
+    </div>
+  );
 }
 
 const MarqueeSection = lazy(() => import('./sections/MarqueeSection'));
